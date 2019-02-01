@@ -1,0 +1,36 @@
+{
+  "engines": {
+    "composer": "^0.20.5"
+  },
+  "name": "demo-bank",
+  "version": "1.0.0",
+  "description": "A simple block chain application using Hyperledger",
+  "scripts": {
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/demo-bank.bna",
+    "pretest": "npm run lint",
+    "lint": "eslint .",
+    "test": "nyc mocha -t 0 test/*.js && cucumber-js"
+  },
+  "keywords": [
+    "composer",
+    "composer-network"
+  ],
+  "author": "Arun George Zachariah",
+  "email": "az2z7@mail.umkc.edu",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-admin": "^0.20.5",
+    "composer-cli": "^0.20.5",
+    "composer-client": "^0.20.5",
+    "composer-common": "^0.20.5",
+    "composer-connector-embedded": "^0.20.5",
+    "composer-cucumber-steps": "^0.20.5",
+    "chai": "latest",
+    "chai-as-promised": "latest",
+    "cucumber": "^2.2.0",
+    "eslint": "latest",
+    "nyc": "latest",
+    "mkdirp": "latest",
+    "mocha": "latest"
+  }
+}
